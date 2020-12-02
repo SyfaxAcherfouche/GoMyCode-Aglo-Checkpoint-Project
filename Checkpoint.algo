@@ -1,0 +1,23 @@
+ALGORITHM algorithm_checkpoint
+VAR
+    var 
+    sentence: STRING;
+    num_of_char: INTEGER = 0;
+    num_of_vowels: INTEGER = 0;
+    num_of_word: INTEGER = 0;
+BEGIN
+    REPEAT
+        Read(sentence)
+        IF (sentence <> "") THEN
+            num_of_char := num_of_char + 1;
+            IF (sentence = "a" or "e" or "i" or "o" or "u" or "y")  THEN
+                num_of_vowels := num_of_vowels + 1
+            ELSE
+                num_of_word := num_of_word + 1
+            END_IF
+        END_IF
+    UNTIL (sentence = '.')
+    Write(num_of_char);
+    Write(num_of_vowels);
+    Write(num_of_word);
+END
